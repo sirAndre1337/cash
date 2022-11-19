@@ -53,7 +53,8 @@ class CreateUserUseCase {
             select: {
                 id : true,
                 accountId: true,
-                username: true
+                username: true,
+                account : true
             }
         })
 

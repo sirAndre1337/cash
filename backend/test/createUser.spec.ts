@@ -2,9 +2,9 @@ import request from "supertest";
 import { app } from "../src/app";
 
 describe("Create user", () => {
-    const time = Date.now();
-
+    
     it('should be able to create a new user', async () => {
+        const time = Date.now();
         const username = `andre${time}`;
         const password = 'Admin1337';
         return request(app).post('/users')
@@ -96,6 +96,30 @@ describe("Create user", () => {
             .then((res) => {
                 expect(res.status).toBe(400),
                     expect(res.body.message).toBe('Password must have at least 8 characters a number and a capital letter')
+            })
+    })
+
+    it('should create a account after create a success user' , () => {
+        const time = Date.now();
+        const username = `andre${time}`;
+        const password = 'Admin1337';
+        return request(app).post('/users')
+            .send({username, password})
+            .then((res) => {
+                expect(res.status).toBe(200)
+                expect(res.body).toHaveProperty('account');
+            })
+    })
+
+    it('should create a account with a balance of 100 after create a success user' , () => {
+        const time = Date.now();
+        const username = `andre${time}`;
+        const password = 'Admin1337';
+        return request(app).post('/users')
+            .send({username, password})
+            .then((res) => {
+                expect(res.status).toBe(200)
+                expect(res.body.account.balance).toBe(100);
             })
     })
 })
