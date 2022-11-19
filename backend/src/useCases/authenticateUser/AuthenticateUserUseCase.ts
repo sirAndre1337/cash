@@ -11,6 +11,14 @@ class AuthenticateUserUseCase {
 
     async execute ({username, password} : IuserRequest) {
 
+        if(!username) {
+            throw new Error("Username field is a mandatory attribute");
+        }
+
+        if(!password) {
+            throw new Error("Password field is a mandatory attribute");
+        }
+
          const userExists = await cliente.user.findFirst({
             where: {
                 username

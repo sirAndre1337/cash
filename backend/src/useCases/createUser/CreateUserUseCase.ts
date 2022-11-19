@@ -49,6 +49,11 @@ class CreateUserUseCase {
                 username,
                 password : passwordHash,
                 accountId : account.id
+            },
+            select: {
+                id : true,
+                accountId: true,
+                username: true
             }
         })
 
