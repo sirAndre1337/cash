@@ -49,4 +49,12 @@ describe('get Balance', () => {
             expect(res.body.message).toBe('Token invalid');
         })
     })
+
+    it('should not return a balance with no token' , () => {
+        return request(app).get('/balance')
+        .then((res) => {
+            expect(res.status).toBe(401)
+            expect(res.body.message).toBe('Token is missing');
+        })
+    })
 })
