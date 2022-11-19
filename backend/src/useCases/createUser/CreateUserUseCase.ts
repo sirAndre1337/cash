@@ -8,6 +8,13 @@ interface IuserRequest {
 
 class CreateUserUseCase {
     async execute({username, password} : IuserRequest) {
+        if(!username) {
+            throw new Error("Username field is a mandatory attribute");
+        }
+
+        if(!password) {
+            throw new Error("Password field is a mandatory attribute");
+        }
 
         if(username.length < 3){
             throw new Error("Username must have at least 3 characters");
