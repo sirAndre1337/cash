@@ -13,7 +13,7 @@ class GetBalanceUserUseCase {
         })
 
         if(!user) {
-            throw new Error("User not found!")
+            throw new Error("Token invalid!")
         }
 
         const account = await cliente.account.findFirst({
@@ -23,7 +23,7 @@ class GetBalanceUserUseCase {
         })
 
         if(!account) {
-            throw new Error("Account not found!")
+            throw new Error(`Account for user ${user.username} not found!`)
         }
 
         return account.balance;
