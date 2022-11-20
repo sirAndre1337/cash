@@ -21,7 +21,7 @@ export const FilterTransactions = ({ selectDate , handleChangeSelectDate, cash, 
                             selected={selectDate}
                             onChange={date => handleChangeSelectDate(date)}
                             dateFormat="dd/MM/yyyy"
-                            maxDate={new Date()}
+                            // maxDate={new Date()}
                             className="bg-gray-800 text-gray-200 text-sm rounded-lg pl-5 p-1.5 overflow-auto"
                         />
                     </div>
