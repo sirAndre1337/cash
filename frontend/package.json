@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "docker" : "npm run build && npm start"
+    "docker" : "npm install && npm run dev"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.1",

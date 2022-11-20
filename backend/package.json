@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "test": "jest",
-    "migrate": "npx prisma migrate dev && npm run dev"
+    "migrate": "npx prisma migrate dev",
+    "docker" : "npm install && npm run migrate && npm run dev"
   },
   "keywords": [],
   "author": "",
