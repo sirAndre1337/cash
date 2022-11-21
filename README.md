@@ -49,7 +49,7 @@ Neste projeto também foram trabalhados tópicos como testes com Jest.
 ## Front end
 
 - HTML / JavaScript / TypeScript
-- ReactJS
+- NextJS/ReactJS
 - TailwindCSS
 - Axios
 - React Hook Forms
@@ -79,7 +79,7 @@ git clone git@github.com:sirAndre1337/cash.git
 cd backend
 
 # executar o projeto com docker
- - criar o arquivo .env na raiz para que o Prisma(ORM) se connect
+ - criar o arquivo .env na raiz para que o Prisma(ORM) se conectar
   DATABASE_URL="postgresql://postgres:admin@localhost:5432/ngCash?schema=public" apenas um Exemplo para se conectar localmente,
   olhe em 'https://www.prisma.io/docs/reference/database-reference/connection-urls' para mais exemplos.
 - subir o container com o bd
